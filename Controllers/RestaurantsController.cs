@@ -1,17 +1,19 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using BestRestaurant.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace ToDoList.Controllers
+namespace BestRestaurant.Controllers
 {
-  public class ItemsController : Controller
+  public class RestaurantsController : Controller
   {
-    private readonly ToDoListContext _db;
+    private readonly BestRestaurantContext _db;
 
     public ItemsController(ToDoListContext db)
     {
       _db = db;
     }
+  }
+}
