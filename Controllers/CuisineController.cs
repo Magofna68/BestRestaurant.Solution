@@ -24,3 +24,8 @@ public ActionResult Create(Cuisine cuisine)
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+public ActionResult Details(int id)
+{
+  Cuisine thisCuisine = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
+  return View(thisCategory);
+}
