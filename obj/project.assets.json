@@ -222,13 +222,13 @@
           "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "MySqlConnector/0.69.0": {
+      "MySqlConnector/1.1.0": {
         "type": "package",
         "compile": {
-          "lib/netcoreapp3.0/MySqlConnector.dll": {}
+          "lib/net5.0/MySqlConnector.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.0/MySqlConnector.dll": {}
+          "lib/net5.0/MySqlConnector.dll": {}
         }
       },
       "NETStandard.Library/1.6.1": {
@@ -1930,10 +1930,10 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "MySqlConnector/0.69.0": {
-      "sha512": "WcTKuczgGiCNqyNpBW3oTZnRzitIxKl/V7D2foKsUFsW+hcJgDSOT147KPLC25VO/Aaj8FXsozK+zDLsAsOv8g==",
+    "MySqlConnector/1.1.0": {
+      "sha512": "RQPR2vkQjSiyGH2mV17K4+gDcgI8hidxgD2qli3OcRupvqpQjoL6S35M3ZjIM6CXC0TgImvJo3HA/fLSOG+oBA==",
       "type": "package",
-      "path": "mysqlconnector/0.69.0",
+      "path": "mysqlconnector/1.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -1943,10 +1943,12 @@
         "lib/net461/MySqlConnector.xml",
         "lib/net471/MySqlConnector.dll",
         "lib/net471/MySqlConnector.xml",
+        "lib/net5.0/MySqlConnector.dll",
+        "lib/net5.0/MySqlConnector.xml",
         "lib/netcoreapp2.1/MySqlConnector.dll",
         "lib/netcoreapp2.1/MySqlConnector.xml",
-        "lib/netcoreapp3.0/MySqlConnector.dll",
-        "lib/netcoreapp3.0/MySqlConnector.xml",
+        "lib/netcoreapp3.1/MySqlConnector.dll",
+        "lib/netcoreapp3.1/MySqlConnector.xml",
         "lib/netstandard1.3/MySqlConnector.dll",
         "lib/netstandard1.3/MySqlConnector.xml",
         "lib/netstandard2.0/MySqlConnector.dll",
@@ -1954,7 +1956,7 @@
         "lib/netstandard2.1/MySqlConnector.dll",
         "lib/netstandard2.1/MySqlConnector.xml",
         "logo.png",
-        "mysqlconnector.0.69.0.nupkg.sha512",
+        "mysqlconnector.1.1.0.nupkg.sha512",
         "mysqlconnector.nuspec"
       ]
     },
@@ -5681,7 +5683,7 @@
     "net5.0": [
       "Microsoft.EntityFrameworkCore >= 5.0.0",
       "Microsoft.EntityFrameworkCore.Proxies >= 5.0.0",
-      "MySqlConnector >= 0.69.0",
+      "MySqlConnector >= 1.1.0",
       "Pomelo.EntityFrameworkCore.MySql >= 5.0.0-alpha.2"
     ]
   },
@@ -5732,7 +5734,7 @@
           },
           "MySqlConnector": {
             "target": "Package",
-            "version": "[0.69.0, )"
+            "version": "[1.1.0, )"
           },
           "Pomelo.EntityFrameworkCore.MySql": {
             "target": "Package",
@@ -5760,16 +5762,5 @@
         "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1605",
-      "level": "Error",
-      "message": "Detected package downgrade: MySqlConnector from 1.1.0 to 0.69.0. Reference the package directly from the project to select a different version. \n BestRestaurant -> Pomelo.EntityFrameworkCore.MySql 5.0.0-alpha.2 -> MySqlConnector (>= 1.1.0) \n BestRestaurant -> MySqlConnector (>= 0.69.0)",
-      "libraryId": "MySqlConnector",
-      "targetGraphs": [
-        "net5.0"
-      ]
-    }
-  ]
+  }
 }
