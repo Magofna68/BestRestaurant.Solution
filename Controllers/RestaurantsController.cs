@@ -17,22 +17,36 @@ namespace BestRestaurant.Controllers
     }
     public ActionResult Delete(int id)
     {
-      var thisRestaurant = _db.Restaurant.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+      var thisRestaurant = _db.Restaurants.FirstOrDefault(restaurant => restaurants.RestaurantId == id);
       return View(thisRestaurant);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      var thisRestaurant = _db.Restaurant.FirstOrDefault(restaurants => restaurants.RestaurantId == id);
+      var thisRestaurant = _db.Restaurants.FirstOrDefault(restaurants => restaurants.RestaurantId == id);
       _db.Restaurant.Remove(thisRestaurant);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
     public ActionResult Details(int id)
     {
-      Restaurant thisRestaurant = _db.Restaurant.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+      Restaurant thisRestaurant = _db.Restaurants.FirstOrDefault(restaurant => restaurants.RestaurantId == id);
       return View(thisRestaurant);
+    }
+    public ActionResult Edit(int id)
+    {
+      var thisRestaurant = _db.Restaurants.FirstOrDefault(restaurants => restaurant.RestaurantId == id);
+      ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name");
+      return View(thisRestaurant);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Restaurant restaurant)
+    {
+      _db.Entry(Restaurant).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }
