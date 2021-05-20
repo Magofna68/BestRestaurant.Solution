@@ -11,9 +11,23 @@ namespace BestRestaurant.Controllers
   {
     private readonly BestRestaurantContext _db;
 
-    public ItemsController(ToDoListContext db)
+    public RestaurantsController(BestRestaurantContext db)
     {
       _db = db;
+    }
+    public ActionResult Delete(int id)
+    {
+      var thisRestaurant = _db.Restaurant.FirstOrDefault(restaurant => restaurant.RestaurantId == id);
+      return View(thisRestaurant);
+    }
+
+    [HttpPost, ActionName("Delete")]
+    public ActionResult DeleteConfirmed(int id)
+    {
+      var thisRestaurant = _db.Restaurant.FirstOrDefault(restaurants => restaurants.RestaurantId == id);
+      _db.Restaurant.Remove(thisRestaurant);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
     }
   }
 }
