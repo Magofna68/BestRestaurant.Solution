@@ -26,6 +26,19 @@ public ActionResult Create(Cuisine cuisine)
     }
 public ActionResult Details(int id)
 {
-  Cuisine thisCuisine = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-  return View(thisCategory);
+  Cuisine thisCuisine = _db.Cuisines.FirstOrDefault(cuisine => cuisine.CuisineId == id);
+  return View(thisCuisine);
 }
+public ActionResult Edit(int id)
+    {
+      var thisCuisine = _db.Cuisines.FirstOrDefault(cuisine => cuisine.CuisineId == id);
+      return View(thisCuisine);
+    }
+
+    [HttpPost]
+    public ActionResult Edit(Cuisine cuisine)
+    {
+      _db.Entry(cuisine).State = EntityState.Modified;
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
