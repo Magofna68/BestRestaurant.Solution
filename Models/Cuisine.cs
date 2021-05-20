@@ -9,6 +9,8 @@ namespace BestRestaurant.Models
       this.Restaurant = new HashSet<Restaurant>();
     }
 
-    public int
+    public int CuisineId { get; set; }
+    public string Name { get; set; }
+    public virtual ICollection<Restaurant> Restaurant { get; set; }
   }
 }

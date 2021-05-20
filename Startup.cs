@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using ToDoList.Models;
 
-namespace ToDoList
+namespace BestRestaurant
 {
   public class Startup
   {
