@@ -48,5 +48,23 @@ namespace BestRestaurant.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    [HttpPost]
+    public ActionResult Create(Restaurant restaurant)
+    {
+      _db.Restaurants.Add(Restaurant);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+    public ActionResult Create()
+    {
+      ViewBag.CuisineId = new SelectList(_db.Cuisines, "CuisineId", "Name");
+      return View();
+    }
+    public ActionResult Index()
+    {
+      List<Restaurant> model = _db.Restaurant.Include(restaurants => restaurants.Cuisine).ToList();
+      return View(model);
+    }
   }
 }
